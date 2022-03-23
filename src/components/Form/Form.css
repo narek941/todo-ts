@@ -10,5 +10,6 @@
   padding: 18.5px 14px;
   outline: none;
   border-radius: 5px 0 0 5px;
-  border-color: #1d7eaf;
+  border: none;
+  border-bottom: 1px solid #1d7eaf;
 }

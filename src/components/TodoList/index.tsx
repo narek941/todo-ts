@@ -14,26 +14,26 @@ export const TodoList: React.FC<TodoListProps> = ({
   removeHandler,
 }) => {
   if (todos.length === 0) {
-    return <p>No todo</p>;
+    return <p>No todo yet</p>;
   }
+
+  const onRemove = (event: React.MouseEvent, id: number) => {
+    event.preventDefault();
+    removeHandler(id);
+  };
   return (
     <ul className="wrapper">
       {todos.map((todo) => {
-        const classes = ["todo"];
-        if (todo.completed) {
-          classes.push("completed");
-        }
         return (
-          <li className={classes.join(" ")} key={todo.id}>
-            <label>
-              <input
-                type="checkbox"
-                checked={todo.completed}
-                onChange={toggleHandler.bind(null, todo.id)}
-              />
-              <span>{todo.title}</span>
-              <i onClick={() => removeHandler(todo.id)}>d</i>
-            </label>
+          <li className="todos" key={todo.id}>
+            <input
+              className="check"
+              type="checkbox"
+              checked={todo.completed}
+              onChange={toggleHandler.bind(null, todo.id)}
+            />
+            <span className="text">{todo.title}</span>
+            <i onClick={(event) => onRemove(event, todo.id)}>x</i>
           </li>
         );
       })}
