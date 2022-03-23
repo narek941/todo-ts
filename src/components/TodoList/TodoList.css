@@ -1,0 +1,31 @@
+.completed span {
+  text-decoration: line-through;
+}
+li {
+  margin-bottom: 1rem;
+}
+label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  background: #f3f3f3;
+}
+i {
+  z-index: 2;
+  color: red;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: #1d7eaf;
+  font-size: 1rem;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.00938em;
+  cursor: pointer;
+}
